@@ -1,79 +1,102 @@
-<?php require_once "actions/country.php";?>
-<?php require_once "layout/parameters.php";?>
+<?php require_once "actions/file/store.php"?>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include "layout/header.html"?>
-    <title>Countries</title>
+    <?php include_once "layout/header.html"?>
+    <link href="/style/css/FileUpload.css" rel="stylesheet">
+    <title>Upload your file</title>
 </head>
 <body>
-<div class="container-lg">
-    <div class="card mt-5 px-3 py-4 shadow-lg rounded-5">
-        <h1 class="text-center">Countries</h1>
-        <hr class="w-50 mx-auto">
-        <form class="px-4 mb-4">
-            <div class="row row-cols-md-2 row-cols-1">
-                <div class="col">
-                    <input type="search" name="search" class="form-control form-control-lg rounded-pill" placeholder="searching..." value="<?php echo $search ?? null?>">
-                </div>
-                <div class="col">
-                    <select name="sort" class="form-select form-select-lg rounded-pill">
-                        <option value="id|desc" <?php echo $sort == 'id|desc' ? "selected":"" ?>>Sorting: Latest - Oldes</option>
-                        <option value="id|asc" <?php echo $sort == 'id|asc' ? "selected":"" ?>>Sorting: Oldes - Latest</option>
-                        <option value="name|asc" <?php echo $sort == 'name|asc' ? "selected":"" ?>>Sorting: A - Z</option>
-                        <option value="name|desc" <?php echo $sort == 'name|desc' ? "selected":"" ?>>Sorting: Z - A</option>
-                    </select>
+<div>
+    <?php include_once "layout/nav-bar.php"?>
+
+    <div class="container py-5">
+        <div align="center">
+            <div class="d-none">
+                <a href="/">
+                    <img src="assets/images/logo.png" width="250">
+                </a>
+                <hr class="text-white opacity-100 border border-3 rounded-pill">
+            </div>
+            <?php require_once "layout/buttons-bar.php"?>
+            <div class="w-100">
+                <?php require_once 'layout/alerts.php'?>
+            </div>
+            <div class="text-end text-white fw-bold" dir="rtl">
+                <h3 class="text-white">Test cases</h3>
+                <div class="d-flex flex-wrap justify-content-start align-items-center bg-secondary bg-opacity-25 rounded-4 p-3">
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تنفيذ ضوابط الوصول يحمي بيانات العملاء ويقلل من فرص التسريبات والاختراقات الإلكترونية.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تنفيذ ضوابط الوصول يحمي بيانات العملاء ويقلل من فرص التسريبات والاختراقات الإلكترونية.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تنفذ الحكومة إجراءات دفاعية لمكافحة التهديدات الإرهابية وتأمين الحدود.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        توجيه الرسالة الداخلية يسهم في توجيه العاملين نحو أهداف واضحة ومحددة للشركة.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تسعى الحكومة إلى تطوير قوانين وسياسات لحماية البيانات الشخصية.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تم تحسين الكفاءة التشغيلية في المنشآت الوطنية من خلال تحسين البنية التحتية والموارد الطبيعية.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تصميم أنظمة جدار الحماية يعزز من مستوى الأمان الإلكتروني ويقلل من فرص التسريبات البيانات.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تسلط الدراسات الاقتصادية الضوء على أثر الأحداث السياسية على النمو الاقتصادي.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تبرز الإجراءات الدفاعية ضرورة تكثيف الجهود لمكافحة التهديدات الإرهابية وتحقيق الاستقرار السياسي.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تعكس الإجراءات الدفاعية الجهود المبذولة لمكافحة التهديدات الإرهابية وتعزيز الاستقرار.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        يجب على المؤسسات توفير التدريب اللازم للموظفين للتعامل مع التهديدات السيبرانية.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تُظهر السياسات الأمنية الحاجة إلى تعزيز القدرات للتصدي للتهديدات الإرهابية وتحقيق الاستقرار.
+                    </a>
+                    <a href="#" class="btn btn-primary fw-bold rounded-pill m-2" onclick="SubmitForm(this)">
+                        تطبيق قرارات إدارية جديدة يعكس التزام الشركة بتحسين عملياتها وتعزيز كفاءتها وتحفيز موظفيها.
+                    </a>
                 </div>
             </div>
-            <div align="center" class="mt-4">
-                <input type="submit" class="btn btn-primary px-4 py-2 rounded-pill fw-bolder" value="Sort">
-            </div>
-        </form>
-        <?php include "layout/alerts.php"?>
-        <a href="/pages/create.php" class="btn btn-outline-success px-4 py-2 rounded-pill d-inline-block ms-auto mb-3 fw-bolder">
-            <i class="fa-plus fa-solid fa-1x"></i>
-            Create
-        </a>
-        <h3>Total (<span class="text-primary"><?php echo count($countries)?></span>)</h3>
-        <table class="table table-secondary table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Capital</th>
-                    <th>Currency</th>
-                    <th>PhoneCode</th>
-                    <th>States</th>
-                    <th>event</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($countries as $country){?>
-                <tr>
-                    <th>#<?php echo $country['id'] ?? null ?></th>
-                    <td><?php echo $country['name'] ?? null ?></td>
-                    <td><?php echo $country['capital'] ?? null ?></td>
-                    <td><?php echo $country['currency'] ?? null ?></td>
-                    <td><?php echo $country['phonecode'] ?? null ?></td>
-                    <td><?php echo $country['count_states'] ?? null ?> state</td>
-                    <td>
-                        <a class="text-decoration-none" href="/actions/country/delete.php?id=<?php echo $country['id']?>">
-                            <i class="fa-x fa-solid fa-1x text-danger"></i>
-                        </a>
-                        <a class="text-decoration-none" href="/pages/edit.php?id=<?php echo $country['id']?>">
-                            <i class="fa-pen fa-solid fa-1x text-primary"></i>
-                        </a>
-                    </td>
-                </tr>
-            <?php }?>
-            </tbody>
-        </table>
-        <br>
+            <form method="post" action="" enctype="multipart/form-data">
+                <h6 class="text-white text-center">Required (docx, txt)</h6>
+                <div id="card-upload" class="d-flex justify-content-between align-content-center bg-white bg-opacity-50 rounded-pill py-2 cursor-pointer mt-4" style="width: 500px;max-width: 100%">
+
+                    <div class="my-auto" onclick="ClickEvent('input_file')">
+                        <h5 class="ms-3">
+                            Upload File
+                            <i class="fa-solid fa-plus"></i>
+                        </h5>
+                    </div>
+                    <div class="my-auto" onclick="ClickEvent('input_file')">
+                        <h5 id="input_context">File name ******</h5>
+                    </div>
+                    <div class="my-auto me-3">
+                        <i class="fa-solid fa-circle-arrow-right fa-2x" onclick="ClickEvent('sub-btn')"></i>
+                        <input type="submit" name="file" id="sub-btn" class="visually-hidden">
+                    </div>
+                </div>
+                <input type="file" name="text_file" hidden accept=".docx,.txt" id="input_file" class="visually-hidden">
+            </form>
+            <form class="opacity-0" method="post" action="" enctype="multipart/form-data">
+                    <textarea name="content" id="content" style="width: 1px;height: 1px;cursor: auto"></textarea>
+                    <input type="submit" id="sub-btn-form" style="width: 1px;height: 1px;cursor: auto">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<?php include "layout/footer.html"?>
+
+<?php require_once "layout/footer.html"?>
+<script src="/style/js/FileUpload.js"></script>
+<script src="/style/js/SubmitForm.js"></script>
 </body>
 </html>

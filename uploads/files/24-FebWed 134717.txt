@@ -1,0 +1,15 @@
+policies:-
+admin can edit
+
+
+
+files:-
+type of files?
+5mb
+type
+xlsx
+pdf
+
+
+
+

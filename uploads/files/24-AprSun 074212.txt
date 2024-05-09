@@ -1,0 +1,22 @@
+topics for admin only
+exist categories, price, search
+show:
+- title
+- thumnail
+- description(color, photos, format, hypertext)
+- price (optional)
+- views
+- details (unknown)
+
+able to comment
+suggested topics
+google adsense banners
+
+
+home page:
+- vip topics
+- hot topics
+- normal topics
+
+
+static_pages (unknown)

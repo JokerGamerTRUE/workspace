@@ -1,0 +1,8 @@
+login home page panel admin
+note end
+produres add (reponsible side new)
+
+
+add city
+add state_id
+set null is_reported (procedures)
